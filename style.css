@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  font: 17px Verdana, Arial;
+  background: #444;
+  color: #eee;
+}
+
+a {
+  color: rgb(255, 192, 0);
+  text-decoration: none;
+}
+
+@media (max-width:1024px){
+  body{
+    font-size: 14px;
+  }
+  nav > div {
+    margin-top:1em;
+  }
+}
+
+@media (min-width:1650px){
+  body{
+    font-size: 20px;
+  }
+}
+
+section {
+  display: table-cell;
+  vertical-align: middle;
+  height: 96vh;
+  width: 80vw;
+  padding: 2vh 10vw;
+  text-align: center;
+}
+
+img{
+  display: block;
+  max-height: 96vh;
+  max-width: 80vw;
+  /*width: 100%;*/
+  height: auto;
+  margin: auto;
+}
+
+.half {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.half >div {
+  display: table-cell;
+  width: 1vw;
+}
+.half > pre {
+  display: table-cell;
+  padding: 0.5em;
+}
+
+ul {
+  margin:0 10vw;
+  padding:0;
+  text-align: left;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+pre {
+  max-width: 78vw;
+}
+
+header {
+  font-size: 1.5em;
+  line-height: 10vh;
+  margin-bottom: 2vh;
+}
+article {
+  max-height: 84vh;
+  overflow: auto;
+}
+nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  -moz-user-select: none;
+  opacity: 0.2;
+  transition: opacity 200ms;
+  padding: 2vh;
+}
+nav:hover {
+  opacity: 1;
+}
+nav > div {
+  background: #aaa;
+  color: #000;
+  width: 3em;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 0.25em;
+}
+.progress {
+  pointer-events: none;
+  position: fixed;
+  top: 1vh;
+  left: 1vh;
+  height: 98vh;
+}
+
+.progress > div {
+  width: 0.25em;
+  background: rgba(255, 192, 0, 0.5);
+  transition: height 200ms;
+}
+
+code {
+  text-align: left;
+}

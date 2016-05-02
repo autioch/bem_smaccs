@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Slideworx CSS</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <main>
+    <div>
+      <section>
+        <header>HTML & CSS brief history</header>
+        <article>
+          <pre class="language-markup"><code>&lt;div font-size=10&gt;Some sample text&lt;/div&gt;
+            </code><code>
+&lt;div style="font-size:10px"&gt;Some sample text&lt;/div&gt;
+            </code><code>
+&lt;div class="smaller"&gt;Some sample text&lt;/div&gt;</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>CSS - Cascading Style Sheets</header>
+        <article>
+          <pre class="language-markup"><code class="language-css">.item-list{
+  height: 100px;
+  overflow: auto;
+}
+
+.item-list.is-half{
+  width: 50%;
+}
+
+.item-list > .item{
+  padding: 2px 3px 8px;
+}
+
+.item-list .text-highlight{
+  font-weight: bold;
+  color: red;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Complex CSS</header>
+        <article>
+          <pre class="language-markup"><code class="language-css">.next-view .next-view-popup > section.next-view-content .next-view-row-content
+.next-view-items-wrapper .next-view-item-scroller ul.next-view-item-list.grid-view-type-active
+li .grid-view-item-row.next-view-item-icon-wrapper .next-view-item-icon i {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.map-module .main-part .map-module-row-footer .map-module-row-bar-wrapper
+.map-module-column.map-module-column-legend > .section .map-legend .map-legend-row
+.map-legend-column > span {
+  color: #4E4E4E;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <img src="images/unseen.jpg"/>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Finding longest selector</header>
+        <article>
+          <pre class="language-markup"><code class="language-javascript">(function(j, w) {
+  w.call(document.styleSheets).forEach(function(q) {
+    try { /* Accessing remote domain cssRules fails. */
+      w.call(q.rules || q.cssRules).forEach(function(k) {
+        (k.selectorText || '').split(',').forEach(function(b) {
+          (b.length > j.length) && (j = b);
+        });
+      });
+    } catch (z) {}
+  });
+  return j;
+})('', [].slice);</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>SASS - Syntactically Awesome Style Sheets</header>
+        <article>
+          <ul>
+            <li>Nesting selections</li>
+            <li>File splitting</li>
+            <li>Parent/current selection reference - famous &</li>
+            <li>Reusable variables</li>
+            <li>Mixins: @mixin /@include</li>
+            <li>Extend: @extend</li>
+            <li>Placeholder selectors %</li>
+            <li>Functions</li>
+            <li>And more...</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>CSS and SASS</header>
+        <article>
+          <div class="half">
+              <pre class="language-markup"><code class="language-css">.item-list{
+  height: 100px;
+  overflow: auto;
+}
+
+.item-list.is-half{
+  width: 50%;
+}
+
+.item-list > .item{
+  padding: 2px 3px 8px;
+}
+
+.item-list .text-highlight{
+  font-weight: bold;
+  color: #red;
+}</code></pre>
+              <div></div>
+              <pre class="language-markup"><code class="language-scss">.item-list{
+  height: 100px;
+  overflow: auto;
+
+  &.is-half{
+    width: 50%;
+  }
+
+  > .item{
+    padding: 2px 3px 8px;
+  }
+
+  .text-highlight{
+    font-weight: bold;
+    color: #red;
+  }
+}</code></pre>
+          </div>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <img src="images/awsome.jpg"/>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Complex SASS</header>
+        <article>
+          <pre class="language-markup"><code class="language-scss">.next-view {
+
+  .next-view-popup {
+    some-rule: some-value;
+
+    > section{
+      @include someMixin;
+      some-rule: some-value;
+
+      &.next-view-content {
+        some-rule: some-value;
+
+        .next-view-row-content {
+          @extend someSelector;
+          some-rule: some-value;
+
+          .next-view-items-wrapper {
+            background: some-value;
+            some-rule: some-value;
+            padding: 3px 9px 2px 0px;
+
+            .next-view-item-scroller{
+              position: absolute;
+
+              ul{
+
+                &.next-view-item-list.grid-view-type-active {
+                  @include lets-add-some-rule: 3px;
+
+                  li {
+                    .grid-view-item-row {
+                      pony: fancy;
+
+                      &.next-view-item-icon-wrapper {
+
+                        .next-view-item-icon {
+
+                          i {
+                            display: inline-block;
+                            vertical-align: middle;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <img src="images/nope.jpg"/>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>CSS/SASS Problems</header>
+        <article>
+          <ul>
+            <li>Specificity</li>
+            <li>Redefinition of selectors</li>
+            <li>Nesting too much</li>
+            <li>No information about selector purpose</li>
+            <li>Forced use of !important</li>
+            <li>And more...</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>BEM - Block Element Modifier</header>
+        <article>
+          <ul>
+            <li>Methodology for naming and structuring selectors.</li>
+            <li>Uses classes, avoids tagnames, ids</li>
+            <li>Harry Roberts' style</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Block</header>
+        <article>
+          <ul>
+            <li>Logically and functionally independent page component.</li>
+            <li>A block encapsulates behaviour (JavaScript, HTML, CSS).</li>
+            <li>Blocks allow reuse.</li>
+          </ul>
+          <br/>
+          <div class="half">
+              <pre class="language-markup"><code class="language-scss">.block{
+  background: #def;
+}</code></pre>
+              <div></div>
+              <pre class="language-markup"><code class="language-scss">.block{
+  background: #def;
+}</code></pre>
+          </div>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Element</header>
+        <article>
+          <ul>
+            <li>Inseparable part of a block.</li>
+          </ul>
+          <br/>
+          <div class="half">
+          <pre class="language-markup"><code class="language-scss">.block{
+  background: #def;
+
+  >.element{
+    box-shadow: 2px;
+}</code></pre>
+          <div></div>
+          <pre class="language-markup"><code class="language-scss">.block{
+  background: #def;
+}
+.block__element{
+  box-shadow: 2px;
+}</code></pre>
+          </div>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Modifier</header>
+        <article>
+          <ul>
+            <li>BEM entity that defines the appearance and behavior of a block or an element.</li>
+            <li>Modifiers are similar in essence to HTML attributes.</li>
+          </ul>
+          <br/>
+          <div class="half">
+          <pre class="language-markup"><code class="language-scss">.block{
+  background: #def;
+
+  >.element{
+    box-shadow: 2px;
+
+    &.is-selectable{
+      cursor: pointer;
+      &:hover{
+        background: #0f0;
+      }
+    }
+  }
+}</code></pre>
+          <div></div>
+          <pre><code class="language-scss">.block{
+  background: #def;
+}
+.block__element{
+  box-shadow: 2px;
+}
+.block__element--selectable{
+  @extend .block__element;
+  cursor: pointer;
+  &:hover{
+    background: #0f0;
+  }
+}</code></pre>
+          </div>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>SMACSS</header>
+        <article>
+          <ul>
+              <li>Scalable and Modular Architecture for CSS</li>
+              <li>Categorizes rules into 5 types, aka. namespaces</li>
+              <li>Promotes similar patterns for selectors</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Base rules</header>
+        <article>
+          <ul>
+            <li>The defaults</li>
+            <li>Normalize, reset</li>
+            <li>Always apply to selected <strong>element</strong> on the page</li>
+            <li>Never requires !important</li>
+          </ul>
+          <br/>
+          <pre><code class="language-scss">body{
+  margin: 0;
+}
+a{
+  outline: none;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Layout rules</header>
+        <article>
+          <ul>
+            <li>Divide the page into sections</li>
+            <li>Hold one or more modules together</li>
+          </ul>
+          <br/>
+          <pre><code class="language-scss">.l-header{
+  positon: fixed;
+  top:0;
+  left:0;
+  right:0;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Module rules</header>
+        <article>
+          <ul>
+            <li>Reusable, modular parts of our design</li>
+            <li>They are the callouts, the sidebar sections, the product lists and so on</li>
+          </ul>
+          <br/>
+          <pre><code class="language-scss">.comments{
+  position: sticky;
+}</code><code class="language-scss">
+.m-comments{
+  position: sticky;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>State rules</header>
+        <article>
+          <ul>
+            <li>Describe how a module or layout will look when in a particular state (hidden, expanded)</li>
+            <li>Describe how a module or layout looks on screens that are smaller or bigger</li>
+            <li>They are also about describing how a module might look in different views like the home page or the inside page.</li>
+            <li>Always use !important to force the state.</li>
+          </ul>
+          <br/>
+          <pre><code class="language-scss">.is-hidden{
+  display: none !important;
+}
+
+.is-text-right{
+  text-align: right !important;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Theme rules</header>
+        <article>
+          <ul>
+            <li>Similar to state rules in that they describe how modules or layouts might look</li>
+            <li>Most sites don’t require a layer of theming but it is good to be aware of it.</li>
+          </ul>
+          <br/>
+          <pre><code class="language-scss">.t-border{
+  border-color: $brandColor;
+}
+.t-text{
+  color: $brandColor;
+}
+.t-background{
+  background-color: $brandColor;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Other methodologies</header>
+        <article>
+          <p>Every few ticks some company/group/project reinvents or modifies exsisting styleguide to suit its needs.</p>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <img src="images/js.jpg"/>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>BEM / SMACSS mix</header>
+        <article>
+          <ul>
+            <li>BEM naming for selectors and SCSS features</li>
+            <li>Custom namespaces</li>
+            <li>State classes</li>
+            <li>No more than 3 nesting</li>
+            <li>Non-invasive, non-breaking implementation</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Namespaces</header>
+        <article>
+          <pre><code class="language-scss">.l-grid{
+  /* Layout, doesn't provide any real function, just appearance */
+}
+.c-button{
+  /* Component, defines an object that can be interacted with.
+   * Often composed with javascript */
+}
+.js-scrollable{
+  /* Javascript, non-styleable classes for javascript manipulation. */
+}
+.is-hidden, .has-error{
+  /* State/utils, usually applied by javascript to update view after changes. */
+}
+.__shame{
+  /* Shame styling. Whenever you apply style that You know is bad/temporary,
+   * prefix it with two underscores. */
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Layout</header>
+        <article>
+          <pre><code class="language-scss">.l-grid {
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+.l-grid__row {
+  margin-left: -1em;
+  margin-right: -1em;
+
+  > div {
+    padding-left: 1em;
+    padding-right: 1em;
+    float: left;
+  }
+}
+
+.l-grid__col--6 {
+  width: 50%;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Component</header>
+        <article>
+          <pre><code class="language-scss">.c-button {
+  @include border-radius(0.25em);
+  border: solid 1px $brandColor;
+  padding: 0.25em 0.5em;
+}
+
+.c-button__icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c-button--large {
+  font-size: 1.2em;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Javascript classes</header>
+        <article>
+          <pre><code class="language-scss">.js-item {}
+.js-label {}
+
+.js-scrollable {
+  overflow: hidden;
+  position: relative;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>State styles</header>
+        <article>
+          <pre><code class="language-scss">.is-hidden{
+  display: none !important;
+}
+
+.has-error{
+  box-shadow: 0 0 0.25em #f00 !important;
+  border-color: #a00 !important;
+}
+
+.is-disabled{
+  pointer-events: none !important;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Shame styles</header>
+        <article>
+          <pre><code class="language-scss">.__cancel-float{
+  float: none !important;
+}
+
+.__absolute{
+  position: absolute;
+}</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Debugging</header>
+        <article>
+          <pre><code class="language-scss">@mixin debug($color){
+  outline: 4px solid $color !important;
+}
+
+/* Focus, Shame */
+:focus, [class^="__"],[class*=" __"] { @include debug(#f00); }
+
+/* Layout */
+[class^="l-"], [class*=" l-"] { @include debug(#0f0); }
+
+/* Component */
+[class^="c-"],[class*=" c-"] { @include debug(#00f); }
+
+/* State/utils */
+[class^="is-"], [class*=" is-"],
+[class^="has-"], [class*=" has-"] { @include debug(#ff0); }
+
+/* Slide */
+[class^="s-"], [class*=" s-"] { @include debug(#f0f); }
+
+/* Javascript */
+[class^="js-"],[class*=" js-"] { @include debug(#0ff); }
+</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <img src="images/cute.jpg"/>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Folder structure</header>
+        <article>
+          <ul>
+            <li>Separate folder for every module, component</li>
+            <li>Separate file for every block</li>
+          </ul>
+          <pre><code class="language-scss">base
+  normalize, mixins, zindex, fonts, variables, settings
+
+components
+  modal, extended-select, collapsible
+
+modules
+  comments, navthumbs, settings
+
+layout
+  header, footer, grid
+
+utils
+  text, position, color, disabled</code></pre>
+        </article>
+      </section>
+    </div>
+    <div>
+      <section>
+        <header>Documentation</header>
+        <article>
+          <ul>
+            <li><a target="_blank" href="//en.bem.info/method/definitions">BEM definitions</a></li>
+            <li><a target="_blank" href="//sass-lang.com">SASS</a></li>
+            <li><a target="_blank" href="//developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </main>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="prism.css" />
+  <script type="text/javascript" src="nav.js"></script>
+  <script type="text/javascript" src="prism.js"></script>
+</body>
+
+</html>
